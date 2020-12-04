@@ -36,5 +36,4 @@ public CoreCompetency()
             return value;
         }
     }
-    }
 }
