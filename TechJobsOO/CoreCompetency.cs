@@ -5,7 +5,7 @@ namespace TechJobsOO
     {
         private int id { get; set; }
         private static int nextId = 1;
-        private string value { get; set; }
+        private string Value { get; set; }
 
 // TODO: Change the fields to auto-implemented properties.
 
@@ -15,9 +15,9 @@ public CoreCompetency()
             nextId++;
         }
 
-        public CoreCompetency(string v) : this()
+        public CoreCompetency(string value) : this()
         {
-            value = v;
+            Value = value;
         }
 
         public override bool Equals(object obj)
@@ -33,7 +33,7 @@ public CoreCompetency()
 
         public override string ToString()
         {
-            return value;
+            return Value;
         }
     }
 }

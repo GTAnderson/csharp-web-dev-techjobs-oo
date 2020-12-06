@@ -21,8 +21,6 @@ namespace TechJobsTest
             Job test_job1 = new Job("Name1", "EmployerName1", "EmployerLocation1", "JobType1", "JobCoreCompetency1");
             Job test_job2 = new Job("Name2", "EmployerName2", "EmployerLocation2", "JobType2", "JobCoreCompetency2");
             Assert.AreEqual(test_job1.Id, test_job2.Id, 1);
-            Assert.IsTrue(test_job1.Id, test_job2.Id, 1);
-            Assert.IsFalse(test_job1.Id, test_job2.Id, 1);
         }
 
         /* TODO: Test the Full Constructor
@@ -37,11 +35,11 @@ namespace TechJobsTest
         public void TestJobConstructorSetsAllFields()
         {
             Job test_job3 = new Job("Product tester", "ACME", "Desert", "Quality control", "Persistence");
-            Assert.AreEqual(test_job3.Name, "Product tester", 1);
-            Assert.AreEqual(test_job3.EmployerName, "ACME", 1);
-            Assert.AreEqual(test_job3.EmployerLocation, "Desert", 1);
-            Assert.AreEqual(test_job3.JobType, "Quality control", 1);
-            Assert.AreEqual(test_job3.JobCoreCompetency, "Persistence", 1);
+            Assert.AreEqual(test_job3.Name, "Product tester");
+            Assert.AreEqual(test_job3.EmployerName, "ACME");
+            Assert.AreEqual(test_job3.EmployerLocation, "Desert");
+            Assert.AreEqual(test_job3.JobType, "Quality control");
+            Assert.AreEqual(test_job3.JobCoreCompetency, "Persistence");
         }
 
         /* TODO: Test the Equals() Method
@@ -55,9 +53,8 @@ namespace TechJobsTest
         {
             Job test_job4 = new Job("EqualJobName", "EqualEmployerName", "EqualEmployerLocation", "EqualJobType", "EqualJobCoreCompetency");
             Job test_job5 = new Job("EqualJobName", "EqualEmployerName", "EqualEmployerLocation", "EqualJobType", "EqualJobCoreCompetency");
-            Assert.AreEqual(test_job4.Id, test_job5.Id, 1);
+            Assert.IsFalse(test_job4.Id.Equals(test_job5.Id));
         }
-
 
     }
 }
