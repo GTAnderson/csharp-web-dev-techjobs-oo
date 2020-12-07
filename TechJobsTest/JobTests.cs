@@ -24,7 +24,7 @@ namespace TechJobsTest
         }
 
         /* TODO: Test the Full Constructor
-        1. In JobTest, define a test called TestJobConstructorSetsAllFields.
+        1. In JobTests, define a test called TestJobConstructorSetsAllFields.
         2. Declare and initialize a new Job object with the following data:
         "Product tester" for Name, "ACME" for EmployerName, "Desert" for EmployerLocation,
         "Quality control" for JobType, and "Persistence" for JobCoreCompetency.
@@ -43,7 +43,7 @@ namespace TechJobsTest
         }
 
         /* TODO: Test the Equals() Method
-        1. In JobTest, define a test called TestJobsForEquality.
+        1. In JobTests, define a test called TestJobsForEquality.
         2. Generate two Job objects that have identical field values EXCEPT for id.
         Test that Equals() returns false.
         */
@@ -56,5 +56,33 @@ namespace TechJobsTest
             Assert.IsFalse(test_job4.Id.Equals(test_job5.Id));
         }
 
+
+        /* TODO: Create First Test for ToString()
+        When passed a Job object, it should return a string that looks like this:
+        
+        ID:  _______
+        Name: _______
+        Employer: _______
+        Location: _______
+        Position Type: _______
+        Core Competency: _______
+
+        If a field is empty, the method should add, “Data not available” after the label.
+        If a Job object ONLY contains data for the id field, the method should return,
+        “OOPS! This job does not seem to exist.”
+
+        In JobTests, add a new test to check that when passed a Job object,
+        it should return a string that contains a blank line before and after the job information.
+        */
+
+        [TestMethod]
+        public void TestJobsForToString()
+        {
+            Job test_job6 = new Job("ToStrJobName", "ToStrEmployerName", "ToStrEmployerLocation", "ToStrJobType", "ToStrJobCoreCompetency");
+            StringAssert.StartsWith(test_job6.ToString(), "\n");
+            StringAssert.EndsWith(test_job6.ToString(), "\n");
+        }
+
     }
 }
+
