@@ -10,7 +10,7 @@ namespace TechJobsOO
         public Employer EmployerName { get; set; }
         public Location EmployerLocation { get; set; }
         public PositionType JobType { get; set; }
-        public CoreCompetency JobCoreCompetency { get; set; }
+        public CoreCompetency CoreCompetency { get; set; }
 
         // TODO: Add the two necessary constructors.
 
@@ -20,13 +20,13 @@ namespace TechJobsOO
             nextId++;
         }
 
-        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
+        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency coreCompetency) : this()
         {
             Name = name;
             EmployerName = employerName;
             EmployerLocation = employerLocation;
             JobType = jobType;
-            JobCoreCompetency = jobCoreCompetency;
+            CoreCompetency = coreCompetency;
         }
 
         // TODO: Generate Equals() and GetHashCode() methods.
@@ -44,7 +44,28 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            return "\n" + "ID:  " + this.Id + "\n" + "Name:  " + this.Name + "\n" + "Employer:  " + this.EmployerName + "\n" + "Location:  " + this.EmployerLocation + "\n" + "Position Type:  " + this.JobType + "\n" + "Core Competency:  " + this.JobCoreCompetency + "\n";
+            if (Name == null)
+            {
+                Name = "Data not available";
+            }
+            else if (EmployerName == null)
+            {
+                EmployerName.Value = "Data not available";
+            }
+            else if (EmployerLocation == null)
+            {
+                EmployerLocation.Value = "Data not available";
+            }
+            else if (JobType == null)
+            {
+                JobType.Value = "Data not available";
+            }
+            else if (CoreCompetency == null)
+            {
+                CoreCompetency.Value = "Data not available";
+            }
+
+            return "\n" + "ID:  " + this.Id + "\n" + "Name:  " + this.Name + "\n" + "Employer:  " + this.EmployerName + "\n" + "Location:  " + this.EmployerLocation + "\n" + "Position Type:  " + this.JobType + "\n" + "Core Competency:  " + this.CoreCompetency + "\n";
         }
 
     }
