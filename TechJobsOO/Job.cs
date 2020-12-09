@@ -48,19 +48,19 @@ namespace TechJobsOO
             {
                 Name = "Data not available";
             }
-            else if (EmployerName == null)
+            else if (EmployerName.Value == null || EmployerName.Value == "")
             {
                 EmployerName.Value = "Data not available";
             }
-            else if (EmployerLocation == null)
+            else if (EmployerLocation.Value == null || EmployerLocation.Value == "")
             {
                 EmployerLocation.Value = "Data not available";
             }
-            else if (JobType == null)
+            else if (JobType.Value == null || JobType.Value == "")
             {
                 JobType.Value = "Data not available";
             }
-            else if (CoreCompetency == null)
+            else if (CoreCompetency.Value == null || CoreCompetency.Value == "")
             {
                 CoreCompetency.Value = "Data not available";
             }
